@@ -1,0 +1,21 @@
+{
+	"name": "anytizer/capitalizer.php",
+	"description": "Capitalize a word",
+	"type": "library",
+	"keywords": [
+		"capitalizer"
+	],
+	"authors": [
+		{
+			"role": "Developer"
+		}
+	],
+	"minimum-stability": "stable",
+	"prefer-stable": true,
+	"require": {
+		"php": ">=7.0"
+	},
+	"autoload": {
+		"files": ["src/libraries/classes/common/class.capitalizer.inc.php"]
+	}
+}
