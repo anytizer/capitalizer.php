@@ -10,11 +10,14 @@ Capitalize most frequently used shortcodes.
 
 ## Usage Example
 
+	<?php
+	require_once("libraries/classes/common/class.capitalizer.inc.php");
+
     $capitalizer = new capitalizer();
     $word = $capitalizer->capitalize($word);
 
 
 ## Output
 
-	* "IP Address" for "ip_address"
-	* "User ID" for "user id"
+ * __IP Address__ for "ip_address"
+ * __User ID__ for "user id"
