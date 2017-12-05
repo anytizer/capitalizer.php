@@ -1,4 +1,7 @@
 tests\capitalizer
  [x]  01
  [x]  02
+ [x]  03
+ [x]  04
+ [x]  05
 

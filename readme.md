@@ -1,6 +1,6 @@
 # capitalizer.php
 
-Capitalize most frequently used shortcodes.
+Capitalizes most frequently used shortcodes.
 
 
 ## Installation

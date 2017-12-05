@@ -17,4 +17,22 @@ class capitalizerTest extends TestCase
 		$capitalizer = new capitalizer();
 		$this->assertEquals("Amount VAT", $capitalizer->capitalize("amount_vat"));
 	}
+
+	public function test03()
+	{
+		$capitalizer = new capitalizer();
+		$this->assertEquals("SN ID", $capitalizer->capitalize("sn_id"));
+	}
+
+	public function test04()
+	{
+		$capitalizer = new capitalizer();
+		$this->assertEquals("RGB Value", $capitalizer->capitalize("rgb_value"));
+	}
+
+	public function test05()
+	{
+		$capitalizer = new capitalizer();
+		$this->assertEquals("Color RGB", $capitalizer->capitalize("color_rgb"));
+	}
 }
