@@ -1,19 +1,35 @@
 <?php
 namespace common;
 
+/**
+ * Class capitalizer
+ * @package common
+ */
 class capitalizer
 {
+	/**
+	 * @var array List of words to capitalize
+	 */
 	private $capitalizable_words = array();
-	
+
+	/**
+	 * capitalizer constructor.
+	 */
 	public function __construct()
 	{
 		$csv = dirname(__FILE__)."/words.csv";
 		$this->capitalizable_words = file($csv, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-		
+
 		// optional
 		$this->capitalizable_words = array_map("strtolower", $this->capitalizable_words);
 	}
-	
+
+	/**
+	 * Capitalize a word that matches in our database.
+	 *
+	 * @param string $input
+	 * @return string
+	 */
 	public function capitalize(string $input): string
 	{
 		$words = preg_split("/[\_|\ ]/is", $input);
@@ -28,7 +44,7 @@ class capitalizer
 				$words[$w] = ucfirst($word);
 			}
 		}
-		
+
 		return implode(" ", $words);
 	}
 }
