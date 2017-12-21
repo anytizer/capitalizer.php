@@ -18,7 +18,7 @@ Capitalizes most frequently used short codes.
     $capitalizer = new capitalizer();
     $word = $capitalizer->capitalize($raw_word);
 
-You should expect __API Key__ as output.
+You should expect __API Key__ as output. See a complete list of capitalizable words in [words.csv](src/libraries/classes/common/words.csv).
 
 
 ## Output
