@@ -16,6 +16,7 @@
 		"php": ">=7.0"
 	},
 	"autoload": {
-		"files": ["src/libraries/classes/common/class.capitalizer.inc.php"]
+		"files": ["src/libraries/classes/common/class.capitalizer.inc.php"],
+		"psr-4": {"capitalizer\\": "src/libraries/classes"}
 	}
 }
