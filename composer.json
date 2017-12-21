@@ -3,7 +3,10 @@
 	"description": "Capitalize a word",
 	"type": "library",
 	"keywords": [
-		"capitalizer"
+		"capitalizer",
+		"case conversion",
+		"uppercase",
+		"lowercase",
 	],
 	"authors": [
 		{
