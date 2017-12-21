@@ -17,11 +17,16 @@ class capitalizer
 	 */
 	public function __construct()
 	{
+		/**
+		 * Load the list of words to capitalize.
+		 */
 		$csv = dirname(__FILE__)."/words.csv";
 		$this->capitalizable_words = file($csv, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-		// optional
-		$this->capitalizable_words = array_map("strtolower", $this->capitalizable_words);
+		/**
+		 * Convert to upper case to ensure how they should look like
+		 */
+		$this->capitalizable_words = array_map("strtoupper", $this->capitalizable_words);
 	}
 
 	/**
@@ -33,9 +38,15 @@ class capitalizer
 	public function capitalize(string $input): string
 	{
 		$words = preg_split("/[\_|\ ]/is", $input);
+		//$words = preg_split("/[^a-zA-Z0-9]/is", $input);
 		foreach($words as $w => $word)
 		{
-			if(in_array(strtolower($word), $this->capitalizable_words))
+			/**
+			 * Sanitize the word to test
+			 */
+			$test_word = preg_replace("/[^a-zA-Z0-9]/", "", $word);
+
+			if(in_array(strtoupper($test_word), $this->capitalizable_words))
 			{
 				$words[$w] = strtoupper($word);
 			}
