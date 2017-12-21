@@ -6,33 +6,46 @@ use PHPUnit\Framework\TestCase;
 
 class capitalizerTest extends TestCase
 {
-	public function test01()
+	private $capitalizer;
+	public function setup()
+	{
+		$this->capitalizer = new capitalizer();
+	}
+
+	public function testGeneralExpectations()
 	{
 		$capitalizer = new capitalizer();
+
+		$this->assertEquals("API Key", $capitalizer->capitalize("api key"));
+		$this->assertEquals("SQL String", $capitalizer->capitalize("sql string"));
+		$this->assertEquals("Buy QTY", $capitalizer->capitalize("buy qTy"));
+		$this->assertEquals("SN Student", $capitalizer->capitalize("SN student"));
+		$this->assertEquals("VAT AMT", $capitalizer->capitalize("vat amt"));
+		$this->assertEquals("VAT Percentage", $capitalizer->capitalize("vat_percentage"));
 		$this->assertEquals("IP Address", $capitalizer->capitalize("ip_address"));
-	}
-
-	public function test02()
-	{
-		$capitalizer = new capitalizer();
 		$this->assertEquals("Amount VAT", $capitalizer->capitalize("amount_vat"));
-	}
-
-	public function test03()
-	{
-		$capitalizer = new capitalizer();
 		$this->assertEquals("SN ID", $capitalizer->capitalize("sn_id"));
-	}
-
-	public function test04()
-	{
-		$capitalizer = new capitalizer();
 		$this->assertEquals("RGB Value", $capitalizer->capitalize("rgb_value"));
+		$this->assertEquals("Color RGB", $capitalizer->capitalize("color_rgb"));
 	}
 
-	public function test05()
+	public function testNegatives()
 	{
 		$capitalizer = new capitalizer();
-		$this->assertEquals("Color RGB", $capitalizer->capitalize("color_rgb"));
+
+		/**
+		 * Negative tests
+		 */
+		$this->assertNotEquals("vat", $capitalizer->capitalize("vat"));
+	}
+
+	public function testSpecialConditions()
+	{
+		$capitalizer = new capitalizer();
+
+		$this->assertEquals("ID ID", $capitalizer->capitalize("id_id"));
+		$this->assertEquals("ID ID", $capitalizer->capitalize("id id"));
+		$this->assertEquals("ID: ID", $capitalizer->capitalize("id: ID"));
+		$this->assertEquals("ID# No.", $capitalizer->capitalize("id# no."));
 	}
 }
