@@ -11,17 +11,21 @@ Capitalizes most frequently used short codes.
 ## Usage Example
 
 	<?php
-	require_once("libraries/classes/common/class.capitalizer.inc.php");
+	require_once("vendor/autoload.php");
+	# require_once("vendor/anytizer/capitalizer.php/src/libraries/classes/common/class.capitalizer.inc.php");
+	
 	use common\capitalizer;
-
-    $raw_word = "api_key";
-    $capitalizer = new capitalizer();
-    $word = $capitalizer->capitalize($raw_word);
+	
+	$raw_word = "api_key";
+	$capitalizer = new capitalizer();
+	$word = $capitalizer->capitalize($raw_word);
+	
+	echo $word;
 
 You should expect __API Key__ as output. See a complete list of capitalizable words in [words.csv](src/libraries/classes/common/words.csv).
 
 
-## Output
+## Output Examples
 
  * __IP Address__ for "ip_address"
  * __User ID__ for "user id"
