@@ -28,6 +28,36 @@ class capitalizerTest extends TestCase
 		$this->assertEquals("RGB Value", $capitalizer->capitalize("rgb_value"));
 		$this->assertEquals("Color RGB", $capitalizer->capitalize("color_rgb"));
 	}
+	
+	public function testUnderscores()
+	{
+		$capitalizer = new capitalizer();
+
+		$this->assertEquals("User ID", $capitalizer->capitalize("user_id"));
+		$this->assertEquals("AMT ID Number", $capitalizer->capitalize("amt_id_number"));
+	}
+	
+	public function testUnderscoresInBegining()
+	{
+		$capitalizer = new capitalizer();
+
+		$this->assertEquals("IP", $capitalizer->capitalize("_ip"));
+	}
+	
+	public function testUnderscoresInEnding()
+	{
+		$capitalizer = new capitalizer();
+
+		$this->assertEquals("Key", $capitalizer->capitalize("key_"));
+		$this->assertEquals("ID", $capitalizer->capitalize("id_"));
+	}
+	
+	public function testMixed()
+	{
+		$capitalizer = new capitalizer();
+
+		$this->assertEquals("ID !no.", $capitalizer->capitalize("id !no."));
+	}
 
 	public function testNegatives()
 	{
@@ -46,6 +76,7 @@ class capitalizerTest extends TestCase
 		$this->assertEquals("ID ID", $capitalizer->capitalize("id_id"));
 		$this->assertEquals("ID ID", $capitalizer->capitalize("id id"));
 		$this->assertEquals("ID: ID", $capitalizer->capitalize("id: ID"));
+		$this->assertEquals("ID#", $capitalizer->capitalize("id#"));
 		$this->assertEquals("ID# No.", $capitalizer->capitalize("id# no."));
 	}
 }

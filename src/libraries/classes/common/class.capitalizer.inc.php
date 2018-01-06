@@ -39,6 +39,8 @@ class capitalizer
 	{
 		$words = preg_split("/[\_|\ ]/is", $input);
 		//$words = preg_split("/[^a-zA-Z0-9]/is", $input);
+
+		$words = array_filter($words);
 		foreach($words as $w => $word)
 		{
 			/**
@@ -52,7 +54,7 @@ class capitalizer
 			}
 			else
 			{
-				$words[$w] = ucfirst($word);
+				$words[$w] = ucfirst(trim($word));
 			}
 		}
 

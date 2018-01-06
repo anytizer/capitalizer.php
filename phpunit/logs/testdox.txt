@@ -1,5 +1,9 @@
 tests\capitalizer
  [x] General expectations
+ [x] Underscores
+ [x] Underscores in begining
+ [x] Underscores in ending
+ [x] Mixed
  [x] Negatives
  [x] Special conditions
 
