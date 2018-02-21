@@ -1,3 +1,4 @@
 /phpunit/phpunit.phar
 /.idea
 /out
+/tests/vendor
