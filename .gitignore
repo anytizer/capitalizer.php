@@ -3,3 +3,4 @@
 /out
 /tests/vendor
 /tests.local/vendor
+/tests.remote/vendor
