@@ -8,17 +8,10 @@
 		"uppercase",
 		"lowercase"
 	],
-	"authors": [
-		{
-			"role": "Developer"
-		}
-	],
-	"minimum-stability": "stable",
-	"prefer-stable": true,
 	"require": {
 		"php": ">=7.0"
 	},
 	"autoload": {
-		"psr-4": {"capitalizer\\": "src/libraries/classes"}
+		"psr-4": {"common\\": "src/common"}
 	}
 }

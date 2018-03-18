@@ -2,3 +2,4 @@
 /.idea
 /out
 /tests/vendor
+/tests.local/vendor
