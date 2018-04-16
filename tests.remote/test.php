@@ -3,7 +3,7 @@ namespace tests;
 
 require_once("./vendor/autoload.php");
 
-use common\capitalizer;
+use anytizer\capitalizer;
 use PHPUnit\Framework\TestCase;
 
 $capitalizer = new capitalizer();

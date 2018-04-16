@@ -1,9 +1,9 @@
 <?php
-namespace common;
+namespace anytizer;
 
 /**
  * Class capitalizer
- * @package common
+ * @package anytizer
  */
 class capitalizer
 {

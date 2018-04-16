@@ -1,2 +1,2 @@
 var ApiGen = ApiGen || {};
-ApiGen.elements = [{"file":"namespace-common.html","label":"common"},{"file":"class-common.capitalizer.html","label":"common\\capitalizer"}];
+ApiGen.elements = [{"file":"namespace-anytizer.html","label":"anytizer"},{"file":"class-anytizer.capitalizer.html","label":"anytizer\\capitalizer"}];

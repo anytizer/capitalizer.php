@@ -12,6 +12,6 @@
 		"php": ">=7.0"
 	},
 	"autoload": {
-		"psr-4": {"common\\": "src/common"}
+		"psr-4": {"anytizer\\": "src/anytizer"}
 	}
 }

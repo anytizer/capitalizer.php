@@ -1,7 +1,7 @@
 <?php
 namespace tests;
 
-use common\capitalizer;
+use anytizer\capitalizer;
 use PHPUnit\Framework\TestCase;
 
 class capitalizerTest extends TestCase

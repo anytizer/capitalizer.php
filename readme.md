@@ -13,7 +13,7 @@ Capitalizes most frequently used short codes.
     <?php
     require_once("vendor/autoload.php");
     
-    use common\capitalizer;
+    use anytizer\capitalizer;
     
     $raw_word = "api_key";
     $capitalizer = new capitalizer();
@@ -21,7 +21,7 @@ Capitalizes most frequently used short codes.
     
     echo $word;
 
-You should expect __API Key__ as output. See a complete list of capitalizable words in [words.csv](src/libraries/classes/common/words.csv).
+You should expect __API Key__ as output. See a complete list of capitalizable words in [words.csv](src/libraries/classes/anytizer/words.csv).
 
 
 ## Output Examples
