@@ -5,6 +5,7 @@ Capitalizes most frequently used short codes.
 
 ## Installation
 
+    composer global require anytizer/capitalizer.php:dev-master
     composer require anytizer/capitalizer.php:dev-master
 
 
