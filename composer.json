@@ -6,7 +6,8 @@
 		"capitalizer",
 		"case conversion",
 		"uppercase",
-		"lowercase"
+		"lowercase",
+		"split words"
 	],
 	"require": {
 		"php": ">=7.0"

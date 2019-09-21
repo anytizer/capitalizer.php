@@ -43,9 +43,7 @@ class capitalizer
 		$words = array_filter($words);
 		foreach($words as $w => $word)
 		{
-			/**
-			 * Sanitize the word to test
-			 */
+            $word = $this->splitize($word);
 			$test_word = preg_replace("/[^a-zA-Z0-9]/", "", $word);
 
 			if(in_array(strtoupper($test_word), $this->capitalizable_words))
@@ -60,4 +58,25 @@ class capitalizer
 
 		return implode(" ", $words);
 	}
+
+    public function splitize(string $input): string
+    {
+        $words = [
+            "socialmedia" => "Social Media",
+            "fullname" => "Full Name",
+            "middlename" => "Middle Name",
+            "lastname" => "Last Name",
+            "nickname" => "Nick Name",
+            "bloodgroup" => "Blood Group",
+        ];
+
+        $return = $input; // same word
+        $search = strtolower($input);
+        if(array_key_exists($search, $words))
+        {
+            $return = $words[$search];
+        }
+
+        return $return;
+    }
 }

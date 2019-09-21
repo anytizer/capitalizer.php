@@ -6,10 +6,10 @@ use PHPUnit\Framework\TestCase;
 
 class capitalizerTest extends TestCase
 {
-	private $capitalizer;
-	public function setup()
+	//private $capitalizer;
+	public function setup(): void
 	{
-		$this->capitalizer = new capitalizer();
+		//$this->capitalizer = new capitalizer();
 	}
 
 	public function testGeneralExpectations()
