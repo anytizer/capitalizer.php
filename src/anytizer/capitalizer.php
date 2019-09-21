@@ -68,6 +68,7 @@ class capitalizer
             "lastname" => "Last Name",
             "nickname" => "Nick Name",
             "bloodgroup" => "Blood Group",
+            "twofactor" => "Two Factor",
         ];
 
         $return = $input; // same word
