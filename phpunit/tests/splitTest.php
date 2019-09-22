@@ -40,4 +40,30 @@ class splitTest extends TestCase
 
         $this->assertEquals("Person Blood Group", $capitalizer->capitalize("person_bloodgroup"));
     }
+
+    /**
+     * @see https://stackoverflow.com/questions/8998382/php-explode-at-capital-letters
+     */
+    public function testCapitalizedSplitter()
+    {
+        $capitalizer = new capitalizer();
+
+        $word = "AgentsIndustries";
+        $expected = "Agents Industries";
+        $pieces = array_filter(preg_split('/(?=[A-Z])/', $word));
+        $words = implode(" ", $pieces);
+
+        $this->assertEquals($expected,  $words);
+    }
+
+    public function testCapitalizedSplitterMultiWords()
+    {
+        $capitalizer = new capitalizer();
+
+        $word = "My Username";
+        $expected = "My User Name";
+        $output = $capitalizer->capitalize($word);
+
+        $this->assertEquals($expected, $output);
+    }
 }

@@ -59,16 +59,23 @@ class capitalizer
 		return implode(" ", $words);
 	}
 
+    /**
+     * @todo Perhaps internal function, private.
+     *
+     * @param string $input
+     * @return string
+     */
     public function splitize(string $input): string
     {
         $words = [
-            "socialmedia" => "Social Media",
-            "fullname" => "Full Name",
-            "middlename" => "Middle Name",
-            "lastname" => "Last Name",
-            "nickname" => "Nick Name",
             "bloodgroup" => "Blood Group",
+            "fullname" => "Full Name",
+            "lastname" => "Last Name",
+            "middlename" => "Middle Name",
+            "nickname" => "Nick Name",
+            "socialmedia" => "Social Media",
             "twofactor" => "Two Factor",
+            "username" => "User Name",
         ];
 
         $return = $input; // same word
@@ -76,6 +83,22 @@ class capitalizer
         if(array_key_exists($search, $words))
         {
             $return = $words[$search];
+        }
+        else
+        {
+            /**
+             * Special arrangement: Separate words
+             * If two words joined together with case differences, split the words
+             * eg. AgentsIndustries => Agents Industries
+             * @todo Write a logic to split pre-capitalized words
+             */
+            // "AgentsDocuments" => "Agents Documents",
+
+            if(!in_array(strtolower($return), array_map("strtolower", $this->capitalizable_words)))
+            {
+                $pieces = array_filter(preg_split('/(?=[A-Z])/', $input));
+                $return = implode(" ", $pieces);
+            }
         }
 
         return $return;

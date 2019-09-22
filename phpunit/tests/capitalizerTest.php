@@ -27,6 +27,8 @@ class capitalizerTest extends TestCase
 		$this->assertEquals("SN ID", $capitalizer->capitalize("sn_id"));
 		$this->assertEquals("RGB Value", $capitalizer->capitalize("rgb_value"));
 		$this->assertEquals("Color RGB", $capitalizer->capitalize("color_rgb"));
+		$this->assertEquals("Group ID", $capitalizer->capitalize("group_id"));
+		$this->assertEquals("Blood Group ID", $capitalizer->capitalize("bloodgroup_id"));
 	}
 	
 	public function testUnderscores()
@@ -37,7 +39,7 @@ class capitalizerTest extends TestCase
 		$this->assertEquals("AMT ID Number", $capitalizer->capitalize("amt_id_number"));
 	}
 	
-	public function testUnderscoresInBegining()
+	public function testUnderscoresInBeginning()
 	{
 		$capitalizer = new capitalizer();
 

@@ -1,7 +1,7 @@
 capitalizer (tests\capitalizer)
  [x] General expectations
  [x] Underscores
- [x] Underscores in begining
+ [x] Underscores in beginning
  [x] Underscores in ending
  [x] Mixed
  [x] Negatives
@@ -12,4 +12,6 @@ split (tests\split)
  [x] Splitize general expectations
  [x] Capitalize multiple words
  [x] Capitalize multiple words joined
+ [x] Capitalized splitter
+ [x] Capitalized splitter multi words
 
