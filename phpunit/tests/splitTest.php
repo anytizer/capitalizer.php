@@ -66,4 +66,26 @@ class splitTest extends TestCase
 
         $this->assertEquals($expected, $output);
     }
+
+    public function testDoubleCapitalizedWordsJoined()
+    {
+        $capitalizer = new capitalizer();
+
+        $word = "socialmedia login";
+        $expected = "Social Media Login";
+        $output = $capitalizer->capitalize($word);
+
+        $this->assertEquals($expected, $output);
+    }
+
+    public function testDoubleCapitalizedWordsSplited()
+    {
+        $capitalizer = new capitalizer();
+
+        $word = "SocialmediaLogin";
+        $expected = "Social Media Login";
+        $output = $capitalizer->capitalize($word);
+
+        $this->assertEquals($expected, $output);
+    }
 }
